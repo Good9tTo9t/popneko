@@ -4,7 +4,20 @@ window.onload = function(){
     var score = 0;
     var audio = new Audio('pop.mp3');
 
-    // mouseclick event
+    // click event
+    document.body.addEventListener("keydown", function(){
+        score++;
+        count.innerHTML = score;
+        img.src = 'open.png';
+        audio.load();
+        audio.play();
+        audio.volume = 0.3;
+    });
+
+    document.body.addEventListener("keyup", function(){
+        img.src = 'close.png';
+    });
+
     document.body.addEventListener("mousedown", function(){
         score++;
         count.innerHTML = score;
